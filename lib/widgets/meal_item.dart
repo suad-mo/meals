@@ -18,6 +18,34 @@ class MealItem extends StatelessWidget {
     required this.duration,
   });
 
+  String get complexityText {
+    switch (complexity) {
+      case Complexity.Simple:
+        return 'Simple';
+      //break; ne treba jer se izlazi iz funkcije
+      case Complexity.Challenging:
+        return 'Challenging';
+      case Complexity.Hard:
+        return 'Hard';
+      default:
+        return 'Unknown';
+    }
+  }
+
+  String get affordabilityText {
+    switch (affordability) {
+      case Affordability.Affordable:
+        return 'Affordable';
+      //break; ne treba jer se izlazi iz funkcije
+      case Affordability.Pricey:
+        return 'Pricey';
+      case Affordability.Lexurious:
+        return 'Expensive';
+      default:
+        return 'Unknown';
+    }
+  }
+
   void selectMeal() {}
 
   @override
@@ -51,7 +79,56 @@ class MealItem extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
+                Positioned(
+                  //samo unutar Stack widgeta
+                  bottom: 20,
+                  right: 10,
+                  child: Container(
+                    width: 300,
+                    color: Colors.black54,
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+                    child: Text(
+                      title,
+                      style: const TextStyle(
+                        fontSize: 26,
+                        color: Colors.white,
+                      ),
+                      softWrap: true, //ako je text predugačak
+                      overflow: TextOverflow.fade,
+                    ),
+                  ),
+                )
               ],
+            ),
+            Padding(
+              padding: EdgeInsets.all(20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  Row(
+                    children: <Widget>[
+                      Icon(Icons.schedule),
+                      SizedBox(
+                        width: 6,
+                      ),
+                      Text(
+                        '${duration} min',
+                      )
+                    ],
+                  ),
+                  Row(children: <Widget>[
+                    Icon(Icons.work),
+                    SizedBox(width: 6),
+                    Text(complexityText)
+                  ]),
+                  Row(children: <Widget>[
+                    Icon(Icons.attach_money),
+                    SizedBox(width: 6),
+                    Text(affordabilityText)
+                  ]),
+                ],
+              ),
             ),
           ],
         ),
