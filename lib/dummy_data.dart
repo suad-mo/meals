@@ -57,7 +57,7 @@ const List<Category> DUMMY_CATEGORIES = [
   ),
 ];
 
-// ignore: unnecessary_const
+// ignore: unnecessary_const, constant_identifier_names
 const DUMMY_MEALS = const [
   Meal(
     id: 'm1',

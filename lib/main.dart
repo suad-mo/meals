@@ -14,13 +14,26 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
           primarySwatch: Colors.pink,
-          fontFamily: 'Releway',
+          fontFamily: 'Raleway',
           textTheme: ThemeData.light().textTheme.copyWith(
+                // titleSmall: const TextStyle(
+                //   fontSize: 20,
+                // ),
+                // titleMedium: const TextStyle(
+                //   fontSize: 20,
+                // ),
+                // titleLarge: const TextStyle(
+                //   fontSize: 20,
+                // ),
                 bodyText1: const TextStyle(
                   color: Color.fromRGBO(20, 51, 51, 1),
                 ),
                 bodyText2: const TextStyle(
                   color: Color.fromRGBO(20, 51, 51, 1),
+                ),
+                headline5: const TextStyle(
+                  fontSize: 20,
+                  //fontWeight: FontWeight.bold,
                 ),
                 headline6: const TextStyle(
                   fontSize: 20,
