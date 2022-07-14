@@ -9,6 +9,7 @@ import '../screens/categories_screen.dart';
 
 void main() => runApp(MyApp());
 
+// ignore: use_key_in_widget_constructors
 class MyApp extends StatefulWidget {
   @override
   State<MyApp> createState() => _MyAppState();
@@ -24,6 +25,7 @@ class _MyAppState extends State<MyApp> {
   };
 
   List<Meal> _availableMeals = DUMMY_MEALS;
+  // ignore: prefer_final_fields
   List<Meal> _favoriteMeals = [];
 
   void _setFilters(Map<String, bool> filterData) {
@@ -92,6 +94,7 @@ class _MyAppState extends State<MyApp> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+          // ignore: deprecated_member_use
           accentColor: Colors.amber,
           canvasColor: const Color.fromRGBO(225, 254, 229, 1)),
       // home: const CategoriesScreen(),
@@ -104,6 +107,7 @@ class _MyAppState extends State<MyApp> {
         FiltersScreen.routeName: (ctx) => FiltersScreen(_filters, _setFilters),
       },
       onGenerateRoute: (settings) {
+        // ignore: avoid_print
         print(settings.arguments);
         return MaterialPageRoute(
           builder: (ctx) => const CategoriesScreen(),
@@ -116,6 +120,7 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
+// ignore: use_key_in_widget_constructors
 class MyHomePage extends StatefulWidget {
   //const MyHomePage({Key? key}) : super(key: key);
 

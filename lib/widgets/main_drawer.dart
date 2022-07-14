@@ -30,8 +30,9 @@ class MainDrawer extends StatelessWidget {
           Container(
             height: 120,
             width: double.infinity,
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             alignment: Alignment.centerLeft,
+            // ignore: deprecated_member_use
             color: Theme.of(context).accentColor,
             child: Text(
               'Cooking Up!',

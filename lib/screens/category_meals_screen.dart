@@ -9,6 +9,7 @@ class CategoryMealsScreen extends StatefulWidget {
 
   final List<Meal> avaibleMeals;
 
+  // ignore: prefer_const_constructors_in_immutables, use_key_in_widget_constructors
   CategoryMealsScreen(this.avaibleMeals);
 
   @override
@@ -20,16 +21,19 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
   late String categoryTitle;
   late List<Meal> displayedMeals;
   //Može i bez ove provjere jer koristi -lete- ključnu riječ ispred promjenjivih
+  // ignore: prefer_final_fields
   var _loadedInitData = false;
 
   @override
   void initState() {
+    // ignore: todo
     // TODO: implement initState
     super.initState();
   }
 
   @override
   void didChangeDependencies() {
+    // ignore: todo
     // TODO: implement didChangeDependencies
     if (!_loadedInitData) {
       final routeArgs =
@@ -45,11 +49,11 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
     super.didChangeDependencies();
   }
 
-  void _removeMeal(String mealId) {
-    setState(() {
-      displayedMeals.removeWhere((meal) => meal.id == mealId);
-    });
-  }
+  // void _removeMeal(String mealId) {
+  //   setState(() {
+  //     displayedMeals.removeWhere((meal) => meal.id == mealId);
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {

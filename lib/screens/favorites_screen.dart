@@ -7,13 +7,14 @@ class FavoritesScreen extends StatelessWidget {
   //const FavoritesScreen({Key? key}) : super(key: key);
   final List<Meal> favoriteMeals;
 
+  // ignore: prefer_const_constructors_in_immutables, use_key_in_widget_constructors
   FavoritesScreen(this.favoriteMeals);
 
   @override
   Widget build(BuildContext context) {
     if (favoriteMeals.isEmpty) {
-      return Center(
-        child: const Text('You have no favorites yet - start adding some!'),
+      return const Center(
+        child: Text('You have no favorites yet - start adding some!'),
       );
     } else {
       return ListView.builder(

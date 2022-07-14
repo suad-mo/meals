@@ -8,7 +8,8 @@ class FiltersScreen extends StatefulWidget {
   final Function saveFilters;
   final Map<String, bool> currentFilters;
 
-  FiltersScreen(this.currentFilters, this.saveFilters);
+  // ignore: use_key_in_widget_constructors
+  const FiltersScreen(this.currentFilters, this.saveFilters);
 
   @override
   State<FiltersScreen> createState() => _FiltersScreenState();
@@ -49,7 +50,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Your Filters',
         ),
         actions: <Widget>[
@@ -63,7 +64,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
               };
               widget.saveFilters(selectedFilters);
             },
-            icon: Icon(Icons.save),
+            icon: const Icon(Icons.save),
           )
         ],
       ),
@@ -71,7 +72,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
       body: Column(
         children: <Widget>[
           Container(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Text(
               'Adjust your meal selection.',
               style: Theme.of(context).textTheme.headline5,

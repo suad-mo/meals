@@ -9,7 +9,8 @@ class TabsScreen extends StatefulWidget {
   //const TabsScreen({Key? key}) : super(key: key);
   final List<Meal> favoriteMeals;
 
-  TabsScreen(this.favoriteMeals);
+  // ignore: use_key_in_widget_constructors
+  const TabsScreen(this.favoriteMeals);
 
   @override
   State<TabsScreen> createState() => _TabsScreenState();
@@ -24,7 +25,7 @@ class _TabsScreenState extends State<TabsScreen> {
     _pages = _pages = [
       {
         'title': 'Categories',
-        'page': CategoriesScreen(),
+        'page': const CategoriesScreen(),
       },
       {
         'title': 'Your Favorites',
@@ -52,10 +53,11 @@ class _TabsScreenState extends State<TabsScreen> {
         onTap: _selectPage,
         backgroundColor: Theme.of(context).primaryColor,
         unselectedItemColor: Colors.white,
+        // ignore: deprecated_member_use
         selectedItemColor: Theme.of(context).accentColor,
         currentIndex: _selectedPageIndex,
         type: BottomNavigationBarType.fixed,
-        items: [
+        items: const [
           BottomNavigationBarItem(
             //backgroundColor: Theme.of(context).primaryColor,
             icon: Icon(Icons.category),

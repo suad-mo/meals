@@ -12,7 +12,8 @@ class MealItem extends StatelessWidget {
   final Complexity complexity;
   final Affordability affordability;
 
-  MealItem({
+  // ignore: use_key_in_widget_constructors
+  const MealItem({
     required this.id,
     required this.title,
     required this.imageUrl,
@@ -116,29 +117,29 @@ class MealItem extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
                   Row(
                     children: <Widget>[
-                      Icon(Icons.schedule),
-                      SizedBox(
+                      const Icon(Icons.schedule),
+                      const SizedBox(
                         width: 6,
                       ),
                       Text(
-                        '${duration} min',
+                        '$duration min',
                       )
                     ],
                   ),
                   Row(children: <Widget>[
-                    Icon(Icons.work),
-                    SizedBox(width: 6),
+                    const Icon(Icons.work),
+                    const SizedBox(width: 6),
                     Text(complexityText)
                   ]),
                   Row(children: <Widget>[
-                    Icon(Icons.attach_money),
-                    SizedBox(width: 6),
+                    const Icon(Icons.attach_money),
+                    const SizedBox(width: 6),
                     Text(affordabilityText)
                   ]),
                 ],

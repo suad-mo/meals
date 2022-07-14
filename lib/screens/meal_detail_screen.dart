@@ -8,7 +8,8 @@ class MealDetailScreen extends StatelessWidget {
   final Function toggleFavorite;
   final Function isFavorite;
 
-  MealDetailScreen(this.toggleFavorite, this.isFavorite);
+  // ignore: use_key_in_widget_constructors
+  const MealDetailScreen(this.toggleFavorite, this.isFavorite);
 
   Widget buildSelectionTitle(BuildContext context, String text) {
     return Container(
@@ -44,6 +45,7 @@ class MealDetailScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
+            // ignore: sized_box_for_whitespace
             Container(
               height: 300,
               width: double.infinity,
@@ -56,6 +58,7 @@ class MealDetailScreen extends StatelessWidget {
             buildContainer(
               ListView.builder(
                 itemBuilder: (ctx, index) => Card(
+                  // ignore: deprecated_member_use
                   color: Theme.of(context).accentColor,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
@@ -82,7 +85,7 @@ class MealDetailScreen extends StatelessWidget {
                         selectedMeal.steps[index],
                       ),
                     ),
-                    Divider(),
+                    const Divider(),
                   ],
                 ),
               ),
